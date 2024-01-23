@@ -20,7 +20,7 @@ fn spawn_floor(
             material: materials.add(Color::DARK_GREEN.into()),
             ..default()
         },
-        Collider::cuboid(7.5, 0.0, 7.5),
+        Collider::cuboid(75.0, 0.0, 75.0),
     );
 
     commands.spawn(floor);
@@ -78,4 +78,17 @@ fn spawn_objects(
         "Blue Cube".to_string(),
         (5.3, 1.0, 5.7),
     ));
+
+    for i in 0..10 {
+        // Convert i to a float
+        let float_value = i as f32;
+
+        commands.spawn(create_obj(
+            0.9, 
+            Color::PINK,
+            "Pink Cube".to_string(),
+            (1.0, float_value, 1.0)
+        ));
+    }
+   
 }
